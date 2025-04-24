@@ -2,6 +2,7 @@ import joblib
 import pandas as pd
 import xgboost
 import os
+import sklearn
 
 current_file_path = os.path.realpath(__file__)
 cwd = os.path.dirname(current_file_path)
@@ -62,7 +63,7 @@ def scale_data(df):
 def running_model(input_dict):
     current_file_path = os.path.realpath(__file__)
     cwd = os.path.dirname(current_file_path)
-    
+
     data_path = os.path.join(cwd,'data/WA_Fn-UseC_-HR-Employee-Attrition.csv')
     df_original = pd.read_csv(data_path)
     input_df = pd.DataFrame(input_dict,index=[0])
